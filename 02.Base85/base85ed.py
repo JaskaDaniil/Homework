@@ -16,7 +16,7 @@ def encode(b: bytes):
     """
 
     res = b""
-    blocks = [b[i:i + 4] for i in range(0, len(b), 4)]
+    blocks = [b[i : i + 4] for i in range(0, len(b), 4)]
 
     for block in blocks:
         original_len = len(block)
@@ -31,7 +31,7 @@ def encode(b: bytes):
             n //= 85
 
         chars.reverse()
-        res += bytes(chars[:original_len + 1])
+        res += bytes(chars[: original_len + 1])
 
     return res
 
@@ -43,7 +43,7 @@ def decode(b: bytes):
     """
 
     res = b""
-    blocks = [b[i:i + 5] for i in range(0, len(b), 5)]
+    blocks = [b[i : i + 5] for i in range(0, len(b), 5)]
 
     for block in blocks:
         original_len = len(block)
@@ -55,6 +55,6 @@ def decode(b: bytes):
             n = n * 85 + alphabet_map[c]
 
         decoded = n.to_bytes(4, "big")
-        res += decoded[:original_len - 1]
+        res += decoded[: original_len - 1]
 
     return res

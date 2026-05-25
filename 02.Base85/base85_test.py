@@ -2,8 +2,6 @@
 Unit tests for 02.Base85
 """
 
-
-
 import base85ed
 import os
 import base64
