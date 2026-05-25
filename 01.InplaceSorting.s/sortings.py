@@ -20,3 +20,29 @@ def trivial_sort2(data: CompSwapList[Any]):
         raise ValueError("Expected at most 2 elements!")
     if data.less(1, 0):
         data.swap(0, 1)
+
+
+def bubble_sort(data: CompSwapList[Any]) -> None:
+    n = len(data)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if data.less(j + 1, j):
+                data.swap(j, j + 1)
+
+
+def quick_sort(data: CompSwapList[Any]) -> None:
+    def _qs(l: int, r: int):
+        if l >= r:
+            return
+        pivot = (l + r) // 2
+        data.swap(pivot, r)
+        pivot = r
+        i = l
+        for j in range(l, r):
+            if data.less(j, pivot):
+                data.swap(i, j)
+                i += 1
+        data.swap(i, pivot)
+        _qs(l, i - 1)
+        _qs(i + 1, r)
+    _qs(0, len(data) - 1)

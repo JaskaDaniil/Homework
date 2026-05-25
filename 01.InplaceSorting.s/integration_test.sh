@@ -2,10 +2,11 @@
 
 status=true
 
-# ---------------------------------------------------
+for size in 0 1 10 100 1000
+do
+    echo "test size: $size"
 
-result=$(uv run python -O ./sorting_demo.py)
-
-# ---------------------------------------------------
+    python3 -O ./sorting_demo.py $size
+done
 
 $status
