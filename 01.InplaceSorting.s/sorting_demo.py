@@ -2,6 +2,7 @@
 """
 Sortings demo
 """
+
 from random import shuffle
 import sys
 from comp_swap_container import CompSwapList

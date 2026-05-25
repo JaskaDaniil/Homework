@@ -45,4 +45,5 @@ def quick_sort(data: CompSwapList[Any]) -> None:
         data.swap(i, pivot)
         _qs(l, i - 1)
         _qs(i + 1, r)
+
     _qs(0, len(data) - 1)

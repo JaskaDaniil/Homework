@@ -35,7 +35,7 @@ def test_trivial_sort2():
     [
         sortings.bubble_sort,
         sortings.quick_sort,
-    ]
+    ],
 )
 def test_some_sorting(sort_func, fatal_array):
     """
